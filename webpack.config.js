@@ -33,16 +33,6 @@ module.exports = webpackConfig => {
     loader: require.resolve('svg-sprite-loader'),
     include: svgDirs,
   });
-
-  webpackConfig.module.loaders.push({
-    test: /\.module\.less$/,
-    loader: ExtractTextPlugin.extract(
-      'css?sourceMap&modules&localIdentName=[local]___[hash:base64:5]!!' +
-      'postcss!' +
-      `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`
-    ),
-  });
-
   webpackConfig.postcss.push(pxtorem({
     rootValue: 100,
     propWhiteList: [],
