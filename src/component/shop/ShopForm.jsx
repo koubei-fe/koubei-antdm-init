@@ -57,7 +57,8 @@ class ShopForm extends Component {
     validateFields((err, values) => {
       if (!err) {
         const areaFields = getTreeNodes(values.residence, areas);
-        Object.assign(this.props.shop, {
+        const shopInfo = {
+          ...this.props.shop,
           brandId: values.brandId[0],
           brandName: getBrandName(values.brandId[0]),
           shopName: values.shopName,
@@ -73,12 +74,11 @@ class ShopForm extends Component {
           mobileNo: values.mobileNo,
           payType: values.payType[0],
           receiveUserId: values.receiveUserId,
-        });
-        console.log(this.props.shop)
+        };
         if (this.props.isEdit) {
-          store.saveShop(this.props.shop.shopId, this.props.shop);
+          store.saveShop(shopInfo.shopId, shopInfo);
         } else {
-          store.addShop(this.props.shop);
+          store.addShop(shopInfo);
         }
         this.props.router.push('shop/list');
       } else {
@@ -90,7 +90,7 @@ class ShopForm extends Component {
   }
 
   render() {
-    const { getFieldProps } = this.props.form;
+    const { getFieldProps, getFieldError } = this.props.form;
 
     const shop = this.props.shop;
 
@@ -104,7 +104,11 @@ class ShopForm extends Component {
             data={brands}
             title="选择品牌"
             {...getFieldProps('brandId', {
-              required: true,
+              rules: [
+                {
+                  required: true,
+                },
+              ],
               initialValue: [shop.brandId],
             })}
           >
@@ -112,8 +116,11 @@ class ShopForm extends Component {
           </Picker>
           <InputItem
             className="shop-form-input"
+            error={getFieldError('shopName')}
             {...getFieldProps('shopName', {
-              required: true,
+              rules: [{
+                required: true,
+              }],
               initialValue: shop.shopName,
             })}
           >门店名称</InputItem>
@@ -122,17 +129,18 @@ class ShopForm extends Component {
             data={areas}
             title="选择地区"
             {...getFieldProps('residence', {
-              required: true,
+              rules: [{
+                required: true,
+              }],
               initialValue: [shop.provinceId, shop.cityId, shop.districtId],
             })}
           >
-            <List.Item arrow="horizontal">选择地区</List.Item>
+            <List.Item arrow="horizontal" error={getFieldError('residence')}>选择地区</List.Item>
           </Picker>
         </List>
         <List renderHeader={() => '门店Logo'}>
           <ImagePicker
             files={images}
-            onChange={this.onLogoChange}
             onImageClick={(index, fs) => console.log(index, fs)}
             selectable={images.length < 5}
           />
@@ -140,8 +148,11 @@ class ShopForm extends Component {
         <List>
           <InputItem
             className="shop-form-input"
+            error={getFieldError('address')}
             {...getFieldProps('address', {
-              required: true,
+              rules: [{
+                required: true,
+              }],
               initialValue: shop.address,
             })}
           >
@@ -153,16 +164,21 @@ class ShopForm extends Component {
             data={category}
             title="选择品类"
             {...getFieldProps('categoryIds', {
-              required: true,
+              rules: [{
+                required: true,
+              }],
               initialValue: shop.categoryIds,
             })}
           >
-            <List.Item arrow="horizontal">选择品类</List.Item>
+            <List.Item arrow="horizontal" error={getFieldError('categoryIds')}>选择品类</List.Item>
           </Picker>
           <InputItem
             className="shop-form-input"
+            error={getFieldError('mobileNo')}
             {...getFieldProps('mobileNo', {
-              required: true,
+              rules: [{
+                required: true,
+              }],
               initialValue: shop.mobileNo,
             })}
           >
@@ -173,8 +189,11 @@ class ShopForm extends Component {
             cols={1}
             data={payTypes}
             title="收款方式"
+            error={getFieldError('payType')}
             {...getFieldProps('payType', {
-              required: true,
+              rules: [{
+                required: true,
+              }],
               initialValue: [shop.payType],
             })}
           >
@@ -182,8 +201,11 @@ class ShopForm extends Component {
           </Picker>
           <InputItem
             className="shop-form-input"
+            error={getFieldError('receiveUserId')}
             {...getFieldProps('receiveUserId', {
-              required: true,
+              rules: [{
+                required: true,
+              }],
               initialValue: shop.receiveUserId,
             })}
           >
