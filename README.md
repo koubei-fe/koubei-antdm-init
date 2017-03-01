@@ -1,8 +1,3 @@
----
-order: 0
-title: 快速上手
-public: true
----
 
 口碑团队针对Mobile Ant Design React，整理的一篇入门文档。
 
