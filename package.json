@@ -1,0 +1,42 @@
+{
+  "family": "antdm",
+  "name": "koubei-antdm-init",
+  "version": "1.0.0",
+  "entry": {
+    "index": "./src/entry/index.jsx"
+  },
+  "dependencies": {
+    "antd": "^2.7.2",
+    "antd-mobile": "^1.0.0",
+    "babel-runtime": "^6.23.0",
+    "rc-form": "1.x",
+    "react": "15.3.x",
+    "react-dom": "15.3.x",
+    "react-router": "^3.0.2"
+  },
+  "devDependencies": {
+    "atool-build": "^0.9.0",
+    "babel-eslint": "^6.0.2",
+    "babel-plugin-import": "~1.0.1",
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-polyfill": "^6.23.0",
+    "dora": "0.4.x",
+    "dora-plugin-livereload": "^0.5.0",
+    "dora-plugin-proxy": "^0.8.5",
+    "dora-plugin-webpack": "^0.8.1",
+    "eslint": "^2.12.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.4.2",
+    "eslint-plugin-react": "^5.1.1",
+    "expect": "^1.20.1",
+    "glob": "^7.1.1",
+    "postcss-pxtorem": "^3.3.1",
+    "svg-sprite-loader": "^0.3.0"
+  },
+  "scripts": {
+    "start": "dora -p 8001 --plugins webpack?publicPath=/${npm_package_family}/${npm_package_name}/,proxy?port=8981",
+    "lint": "eslint --ext .js,.jsx src",
+    "build": "rm -rf dist && atool-build --devtool=#source-map -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}/"
+  }
+}
