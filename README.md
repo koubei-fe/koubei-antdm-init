@@ -1,5 +1,5 @@
 
-口碑团队针对Mobile Ant Design React，整理的一篇入门文档。
+口碑团队针对 Ant Design Mobile，整理的一篇入门文档。
 
 ---
 
@@ -16,7 +16,7 @@
 
 ### 下载脚手架demo
 
-这是口碑针对Mobile Ant Design开发的demo，一个很有参考价值的 React 上手示例。
+这是口碑针对 Ant Design Mobile 开发的 demo，一个很有参考价值的 React 上手示例。
 
 https://github.com/koubei-fe/koubei-antdm-init
 
@@ -45,25 +45,25 @@ $ git clone https://github.com/koubei-fe/koubei-antdm-init.git
 
 ### .eslint
 
-设置eslint规则的配置文件。
+设置 eslint 规则的配置文件。
 
 ### webpack.config.js
 
-webpack配置文件，脚手架里面webpack.config.js是优化配置，如果对webpack构建不熟悉，不建议改动。
+webpack 配置文件，脚手架里面 webpack.config.js 是优化配置，如果对 webpack 构建不熟悉，不建议改动。
 
 ### package.json
 
-npm源依赖配置文件，其中devDependencies配置项，不建议改动。
+npm 源依赖配置文件，其中 devDependencies 配置项，不建议改动。
 
 ### src
 
-项目中所有 js 源码应当存放在此目录下，且所有JS文件编写应当遵循[Javascript 编码规范](https://github.com/airbnb/javascript)。
+项目中所有 JS 源码应当存放在此目录下，且所有 JS 文件编写应当遵循 [Javascript 编码规范](https://github.com/airbnb/javascript)。
 
-其中common目录下存放项目共用的模块和组件，component目录存放具体的业务模块，如：shop、user，entry目录下存放页面的入口文件。
+其中 common 目录下存放项目共用的模块和组件，component 目录存放具体的业务模块，如：shop、user，entry 目录下存放页面的入口文件。
 
 ### dist
 
-dist 作为项目输出目录，所有编译生成css、js文件，用于部署各个环境。
+dist 作为项目输出目录，存放所有编译生成的 css、js 文件，用于部署到各个环境。
 
 ### 使用组件
 
@@ -98,11 +98,11 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-> 你可以在[Mobile Ant Design官网](https://mobile.ant.design/components/date-picker/)选用更多组件。
+> 你可以在 [Ant Design Mobile 官网](https://mobile.ant.design/components/date-picker/) 选用更多组件。
 
 ### 开发调试
 
-安装项目依赖的npm模块
+安装项目依赖的 npm 模块
 
 ```bash
 $ npm install
@@ -122,5 +122,5 @@ $ npm run build
 
 入口文件会构建到 `dist` 目录中，你可以自由部署到不同环境中进行引用。
 
-> 上述例子用于帮助你理解 Ant Design React 的使用流程，并非真实的开发过程，你可以根据自己的项目开发流程进行接入。
+> 上述例子用于帮助你理解 Ant Design Mobile 的使用流程，并非真实的开发过程，你可以根据自己的项目开发流程进行接入。
 
