@@ -7,13 +7,7 @@
 
 ## 扫码体验
 
-<style>
-  .qr {
-    width: 150px;
-  }
-</style>
-
-<img class="qr" src="https://zos.alipayobjects.com/rmsportal/TrdkqxQcrAUcmYelQUNK.png">
+<img width="150" src="https://zos.alipayobjects.com/rmsportal/TrdkqxQcrAUcmYelQUNK.png">
 
 ## 标准开发
 
@@ -28,7 +22,7 @@ https://github.com/koubei-fe/koubei-antdm-init
 
 ```bash
 $ cd ~ && mkdir git && cd git
-$ git clone https://github.com/yulongheli/koubei-antdm-init.git
+$ git clone https://github.com/koubei-fe/koubei-antdm-init.git
 ```
 
 ### 目录结构规范
