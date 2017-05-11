@@ -37,5 +37,11 @@ module.exports = webpackConfig => {
     rootValue: 100,
     propWhiteList: [],
   }));
+
+  webpackConfig.resolve.alias = {
+    react: 'preact-compat',
+    'react-dom': 'preact-compat',
+  };
+
   return webpackConfig;
 };

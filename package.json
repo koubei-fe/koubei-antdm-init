@@ -1,18 +1,17 @@
 {
   "family": "antdm",
   "name": "koubei-antdm-init",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "entry": {
     "index": "./src/entry/index.jsx"
   },
   "dependencies": {
-    "antd": "^2.7.2",
     "antd-mobile": "^1.0.0",
     "babel-runtime": "^6.23.0",
+    "preact": "^8.1.0",
+    "preact-compat": "^3.16.0",
     "rc-form": "1.x",
-    "react": "15.3.x",
-    "react-dom": "15.3.x",
-    "react-router": "^3.0.2"
+    "react-router": "3.0.3"
   },
   "devDependencies": {
     "atool-build": "^0.9.0",
