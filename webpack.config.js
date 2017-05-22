@@ -39,9 +39,11 @@ module.exports = webpackConfig => {
   }));
 
   webpackConfig.resolve.alias = {
-    react: 'preact-compat',
-    'react-dom': 'preact-compat',
-    'create-react-class': 'preact-compat/lib/create-react-class',
+    preact: 'kb-preact',
+    react: 'kb-preact-compat',
+    'react-dom': 'kb-preact-compat',
+    'preact-compat': 'kb-preact-compat',
+    'create-react-class': 'kb-preact-compat/lib/create-react-class',
   };
 
   return webpackConfig;
