@@ -8,9 +8,11 @@
   "dependencies": {
     "antd-mobile": "^1.0.0",
     "babel-runtime": "^6.23.0",
-    "kb-preact": "^8.1.0",
-    "kb-preact-compat": "^3.16.0",
+    "preact": "^8.1.0",
+    "preact-compat": "^3.16.0",
     "rc-form": "1.x",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-router": "^3.0.3"
   },
   "devDependencies": {

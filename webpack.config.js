@@ -37,14 +37,12 @@ module.exports = webpackConfig => {
     rootValue: 100,
     propWhiteList: [],
   }));
-
+  /*
   webpackConfig.resolve.alias = {
-    preact: 'kb-preact',
-    react: 'kb-preact-compat',
-    'react-dom': 'kb-preact-compat',
-    'preact-compat': 'kb-preact-compat',
+    react: 'preact-compat',
+    'react-dom': 'preact-compat',
     'create-react-class': 'kb-preact-compat/lib/create-react-class',
   };
-
+  */
   return webpackConfig;
 };
