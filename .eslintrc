@@ -8,5 +8,8 @@
   "globals": {
     "require": false
   },
+  "rules": {
+    "no-param-reassign": 0
+  },
   "extends": "eslint-config-airbnb"
 }

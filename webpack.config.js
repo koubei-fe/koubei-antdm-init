@@ -1,4 +1,3 @@
-const pxtorem = require('postcss-pxtorem');
 const path = require('path');
 
 // 如果需要本地部署图标，需要在此加入本地图标路径
@@ -33,16 +32,12 @@ module.exports = webpackConfig => {
     loader: require.resolve('svg-sprite-loader'),
     include: svgDirs,
   });
-  webpackConfig.postcss.push(pxtorem({
-    rootValue: 100,
-    propWhiteList: [],
-  }));
-  /*
+
   webpackConfig.resolve.alias = {
     react: 'preact-compat',
     'react-dom': 'preact-compat',
-    'create-react-class': 'kb-preact-compat/lib/create-react-class',
+    'create-react-class': 'preact-compat/lib/create-react-class',
   };
-  */
+
   return webpackConfig;
 };

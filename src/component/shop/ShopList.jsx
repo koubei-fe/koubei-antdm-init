@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import store from './store';
-import { NavBar, Icon, Card, WingBlank, WhiteSpace } from 'antd-mobile';
+import { NavBar, Card, WingBlank, WhiteSpace } from 'antd-mobile';
 import svg from '../../assets/svg';
 
 class ShopList extends Component {
@@ -27,6 +27,14 @@ class ShopList extends Component {
   }
 
   render() {
+    const Icon = ({ type, className = '', size = 'md', ...restProps }) => (
+      <svg
+        className={`am-icon am-icon-${type.substr(1)} am-icon-${size} ${className}`}
+        {...restProps}
+      >
+        <use xlinkHref={type} />
+      </svg>
+    );
     return (
       <div>
         <NavBar
@@ -35,9 +43,7 @@ class ShopList extends Component {
           onLeftClick={this.handleClickBack}
           rightContent={[
             <a key="0" onClick={this.handleClickNew}>
-              <Icon
-                type={svg.plus}
-              />
+              <Icon type={svg.plus} />
             </a>,
           ]}
         >门店

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import store from './store';
-import { NavBar, WhiteSpace, Toast, Modal, Icon, List } from 'antd-mobile';
+import { NavBar, WhiteSpace, Toast, Modal, List } from 'antd-mobile';
 import { PAY_TYPE_TEXT } from './config';
 import svg from '../../assets/svg';
 const alert = Modal.alert;
@@ -40,6 +40,14 @@ export default class ShopEdit extends Component {
   }
 
   render() {
+    const Icon = ({ type, className = '', size = 'md', ...restProps }) => (
+      <svg
+        className={`am-icon am-icon-${type.substr(1)} am-icon-${size} ${className}`}
+        {...restProps}
+      >
+        <use xlinkHref={type} />
+      </svg>
+    );
     return (
       <div>
         <NavBar

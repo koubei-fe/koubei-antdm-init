@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import store from './store';
 import ShopForm from './ShopForm';
-import { NavBar, WhiteSpace, Toast, Modal, Icon } from 'antd-mobile';
+import { NavBar, WhiteSpace, Toast, Modal } from 'antd-mobile';
 import svg from '../../assets/svg';
 const alert = Modal.alert;
 
@@ -34,6 +34,14 @@ export default class ShopEdit extends Component {
   }
 
   render() {
+    const Icon = ({ type, className = '', size = 'md', ...restProps }) => (
+      <svg
+        className={`am-icon am-icon-${type.substr(1)} am-icon-${size} ${className}`}
+        {...restProps}
+      >
+        <use xlinkHref={type} />
+      </svg>
+    );
     return (
       <div>
         <NavBar
@@ -42,9 +50,7 @@ export default class ShopEdit extends Component {
           onLeftClick={this.handleClickBack}
           rightContent={[
             <a key="0" onClick={() => this.handleDelete(this.shop.shopId)}>
-              <Icon
-                type={svg.delete}
-              />
+              <Icon type={svg.delete} />
             </a>,
           ]}
         >

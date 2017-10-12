@@ -6,10 +6,10 @@
     "index": "./src/entry/index.jsx"
   },
   "dependencies": {
-    "antd-mobile": "^1.0.0",
+    "antd-mobile": "next",
     "babel-runtime": "^6.23.0",
-    "preact": "^8.1.0",
-    "preact-compat": "^3.16.0",
+    "preact": "^8.2.5",
+    "preact-compat": "^3.17.0",
     "rc-form": "1.x",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
