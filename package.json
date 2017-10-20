@@ -6,7 +6,7 @@
     "index": "./src/entry/index.jsx"
   },
   "dependencies": {
-    "antd-mobile": "next",
+    "antd-mobile": "^2.0.0-rc.4",
     "babel-runtime": "^6.23.0",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0",
